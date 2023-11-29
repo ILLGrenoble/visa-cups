@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "DEBUG:email backend call arguments $@" 1>&2
+
+# when called without any arguments CUPS expects us to print a backend
+# info for use in the new printer page
+if [ $# -eq 0 ]; then
+    echo "VISA Printer"
+    exit 0
+fi
+
+if [ $# -eq 6 ]; then
+    EPSFILE=$6
+else
+    EPSFILE=$(mktemp </dev/null /tmp/visa-printer.XXXXXX) ||
+        (echo "ERROR:Failed to create temporary file" 1>&2; exit 1)
+    cat > $EPSFILE
+fi
+
+PDFFILE=$EPSFILE.pdf
+
+EPSTOPDF_STATUS=$(/usr/bin/epstopdf $EPSFILE -o $PDFFILE 2>&1)
+EPSTOPDF_RC=$?
+
+if [ $EPSTOPDF_RC -ne 0 ]; then
+    echo "ERROR:Converting to PDF failed: $EPSTOPDF_STATUS" 1>&2
+    exit $EPSTOPDF_RC
+fi
+
+rm -f $PDFFILE
+if [ $# -lt 6 ];then
+    rm -f $EPSFILE
+fi
+
+exit 0
