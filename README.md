@@ -2,11 +2,11 @@
 
 The VISA CUPS Driver is used to send print requests to the host computer of a VISA user.
 
-The driver converts the printable document from Postscript to PDF and then requests a local [VISA Print Server](https://github.com/illgrenoble/visa-print-server) to send the PDF data via a websocket to the VISA client.
+The driver converts the printable document from Postscript to PDF and then requests a local [VISA Print Server](https://github.com/ILLGrenoble/visa-print-server) to send the PDF data via a websocket to the VISA client.
 
-The [VISA Print Client](https://illgrenoble/visa-print-client), an angular module integrated into the [VISA front end](https://illgrenoble/visa-web) receives the PDF data and informs the user/opens a print dialog.
+The [VISA Print Client](https://ILLGrenoble/visa-print-client), an angular module integrated into the [VISA front end](https://ILLGrenoble/visa-web) receives the PDF data and informs the user/opens a print dialog.
 
-An [authentication proxy](https://illgrenoble/visa-jupyter-proxy) is used to ensure that only the owner of an instance can connect to the VISA Print Server and receive print requests.
+An [authentication proxy](https://ILLGrenoble/visa-jupyter-proxy) is used to ensure that only the owner of an instance can connect to the VISA Print Server and receive print requests.
 
 The user then selects a local printer to print the document or saves the PDF as a local file.
 
