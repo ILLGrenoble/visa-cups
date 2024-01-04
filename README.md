@@ -2,7 +2,7 @@
 
 The VISA CUPS Driver is used to send print requests to the host computer of a VISA user.
 
-The driver converts the printable document from Postscript to PDF and then requests a local [VISA Print Server](https://github.com/ILLGrenoble/visa-print-server) to send the PDF data via a websocket to the VISA client.
+The PPD (Postscript Printer Driver) configuration requests a PDF filter to generate PDF data. The PDF data is then sent to the backend that requests a local [VISA Print Server](https://github.com/ILLGrenoble/visa-print-server) to send the PDF data via a websocket to the VISA client.
 
 The [VISA Print Client](https://github.com/ILLGrenoble/visa-print-client), an angular module integrated into the [VISA front end](https://github.com/ILLGrenoble/visa-web) receives the PDF data and informs the user/opens a print dialog.
 

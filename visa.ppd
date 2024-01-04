@@ -7,13 +7,12 @@
 *Manufacturer:	"ILL"
 *Product:	"(visa)"
 *cupsFax:	False
-*cupsFilter:	"application/vnd.cups-postscript 0 -"
+*cupsFilter:	"application/vnd.cups-pdf 0 -"
 *cupsVersion:	1.1
 *cupsManualCopies: True
 *ModelName:     "VISA printer"
 *ShortNickName: "VISA printer"
 *NickName:      "VISA printer"
-*PSVersion:	"(3010.000) 550"
 *LanguageLevel:	"3"
 *ColorDevice:	True
 *FaxSupport:	False

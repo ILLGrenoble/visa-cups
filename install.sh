@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt install cups texlive-font-utils curl
+apt install cups curl
 
 cp visa.ppd /usr/share/cups/model/visa.ppd
 
